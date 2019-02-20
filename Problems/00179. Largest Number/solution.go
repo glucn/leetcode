@@ -47,7 +47,6 @@ func comp(x, y string) bool {
 	if strings.Index(y, x) == 0 {
 		return comp(x, y[len(x):])
 	}
-
 	return x > y
 }
 
