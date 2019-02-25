@@ -1,7 +1,7 @@
 package solution
 
 // Runtime 2876 ms  // TODO: find a better solution
-// Memory 9. MB
+// Memory 9.7 MB
 
 func gridIllumination(N int, lamps [][]int, queries [][]int) []int {
 	result := make([]int, len(queries))
