@@ -3,6 +3,8 @@ package solution
 // Runtime 4ms
 // Memory 6.6 MB
 
+// TODO: there is a better solution with O(N) complexity
+
 func shortestToChar(S string, C byte) []int {
 	last := -1
 	result := make([]int, len(S))
