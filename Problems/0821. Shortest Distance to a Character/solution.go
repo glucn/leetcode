@@ -1,6 +1,6 @@
 package solution
 
-// Runtime 4ms
+// Runtime 4 ms
 // Memory 6.6 MB
 
 // TODO: there is a better solution with O(N) complexity
