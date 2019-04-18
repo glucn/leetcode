@@ -3,9 +3,9 @@ package solution
 // Runtime 288 ms
 // Memory 17.4 MB
 
-// TODO: faster than 5.66%....too slow
+// this solution is too slow
 
-func queryString(S string, N int) bool {
+func queryString_v1(S string, N int) bool {
 	count := 0
 	m := make(map[string]struct{})
 	for i := 0; i < len(S); i++ {
