@@ -1,7 +1,7 @@
 package solution
 
-// Runtime 288 ms
-// Memory 17.4 MB
+// Runtime 148 ms
+// Memory 18.6 MB
 
 // this solution is too slow
 
@@ -12,11 +12,12 @@ func queryString_v1(S string, N int) bool {
 		if S[i] == '0' {
 			continue
 		}
+		n := 0
 		for j := i; j < len(S); j++ {
 			s := S[i : j+1]
+			n = n<<1 + int(S[j]) - int('0')
 			if _, ok := m[s]; !ok {
 				m[s] = struct{}{}
-				n := bToI(s)
 				if n >= 1 && n <= N {
 					count++
 					if count == N {
@@ -27,12 +28,4 @@ func queryString_v1(S string, N int) bool {
 		}
 	}
 	return false
-}
-
-func bToI(s string) int {
-	n := 0
-	for i := range s {
-		n = n*2 + int(s[i]) - int('0')
-	}
-	return n
 }
