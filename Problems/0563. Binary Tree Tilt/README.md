@@ -5,12 +5,11 @@ The tilt of a tree node is defined as the absolute difference between the su
 The tilt of the whole tree is defined as the sum of all nodes' tilt.
 
 Example:
-
-Input:
 ```
-         1
-       /\
-      2     3
+Input:
+        1
+       / \
+      2   3
 Output: 1
 Explanation:
 Tilt of node 2 : 0
