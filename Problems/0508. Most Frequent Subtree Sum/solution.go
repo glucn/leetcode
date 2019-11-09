@@ -32,10 +32,7 @@ func dfs(node *TreeNode, count map[int]int) int {
 	if node == nil {
 		return 0
 	}
-	if node.Left == nil && node.Right == nil {
-		count[node.Val] = count[node.Val] + 1
-		return node.Val
-	}
+
 	leftSum := dfs(node.Left, count)
 	rightSum := dfs(node.Right, count)
 	sum := leftSum + rightSum + node.Val
