@@ -1,18 +1,21 @@
 package _699__Falling_Squares
 
-// Runtime 44 ms, faster than 7.14%
+// Runtime 32 ms, faster than 35.71%
 // Memory 7.2 MB, less than 100%
 
 func fallingSquares(positions [][]int) []int {
 	var intervals []interval
 	var result []int
 
-	maxHeight := 0
-	currentHeight := 0
 	for _, p := range positions {
-		currentHeight, maxHeight = findHeight(intervals, interval{start: p[0], end: p[0] + p[1], height: p[1]}, maxHeight)
+		currentHeight := findHeight(intervals, interval{start: p[0], end: p[0] + p[1], height: p[1]})
 		intervals = append(intervals, interval{start: p[0], end: p[0] + p[1], height: currentHeight})
-		result = append(result, maxHeight)
+
+		if len(result) > 0 {
+			result = append(result, max(result[len(result)-1], currentHeight))
+		} else {
+			result = []int{currentHeight}
+		}
 	}
 	return result
 }
@@ -23,7 +26,7 @@ type interval struct {
 	height int
 }
 
-func findHeight(existing []interval, now interval, maxHeight int) (int, int) {
+func findHeight(existing []interval, now interval) int {
 	bottom := 0
 	for _, i := range existing {
 		if i.end <= now.start || i.start >= now.end {
@@ -31,8 +34,7 @@ func findHeight(existing []interval, now interval, maxHeight int) (int, int) {
 		}
 		bottom = max(bottom, i.height)
 	}
-	nowHeight := bottom + now.height
-	return nowHeight, max(maxHeight, nowHeight)
+	return bottom + now.height
 }
 
 func max(a, b int) int {
