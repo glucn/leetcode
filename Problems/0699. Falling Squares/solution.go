@@ -1,7 +1,8 @@
-package _699__Falling_Squares
+package solution
 
 // Runtime 32 ms, faster than 35.71%
 // Memory 7.2 MB, less than 100%
+// TODO: use segment tree to implement O(NlogN) solution
 
 func fallingSquares(positions [][]int) []int {
 	var intervals []interval
