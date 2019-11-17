@@ -2,8 +2,8 @@ package solution
 
 import "math"
 
-// Runtime 1440 ms, faster than ?%
-// Memory 16.7 MB, less than ?%
+// Runtime 92 ms, faster than 100%
+// Memory 16.4 MB, less than 100%
 
 func minPushBox(grid [][]byte) int {
 	visited := make(map[game]int)
