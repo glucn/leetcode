@@ -31,13 +31,10 @@ func networkDelayTime(times [][]int, N int, K int) int {
 	}
 	time[K] = 0
 
-	h := &pathHeap{
-		paths: &pathSlice{},
-	}
-	heap.Push(h.paths, path{index: K, time: 0})
+	h := &pathSlice{path{index: K, time: 0}}
 
-	for len(*h.paths) > 0 {
-		current := heap.Pop(h.paths).(path)
+	for len(*h) > 0 {
+		current := heap.Pop(h).(path)
 		if visited[current.index] {
 			continue
 		}
@@ -45,7 +42,7 @@ func networkDelayTime(times [][]int, N int, K int) int {
 		for _, e := range graph[current.index] {
 			if !visited[e.to] {
 				newPath := path{index: e.to, time: current.time + e.time}
-				heap.Push(h.paths, newPath)
+				heap.Push(h, newPath)
 			}
 		}
 
@@ -73,10 +70,6 @@ type edge struct {
 type path struct {
 	index int
 	time  int
-}
-
-type pathHeap struct {
-	paths *pathSlice
 }
 
 type pathSlice []path
