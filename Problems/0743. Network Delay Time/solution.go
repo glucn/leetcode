@@ -6,6 +6,7 @@ import "container/heap"
 // Runtime 68 ms, faster than 53.06%
 // Memory 6.9 MB, less than 100%
 
+// Dijkstra's Algorithm
 func networkDelayTime(times [][]int, N int, K int) int {
 	// TODO: validate K < N
 	graph := make([][]edge, N+1)
