@@ -1,4 +1,4 @@
-package _863__All_Nodes_Distance_K_in_Binary_Tree
+package solution
 
 // Definition for a binary tree node.
 type TreeNode struct {
