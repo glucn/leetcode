@@ -1,5 +1,8 @@
 import java.util.Queue;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 // This is the custom function interface.
 // You should not implement it, or speculate about its implementation
@@ -16,7 +19,7 @@ class CustomFunction {
 class Solution {
     public List<List<Integer>> findSolution(CustomFunction customfunction, int z) {
 
-      ArrayList<List<Integer>> result = new ArrayList();
+      ArrayList<List<Integer>> result = new ArrayList<>();
       boolean[][] visited = new boolean[z*2][z*2];
 
       Queue<Pair> q = new LinkedList<>();
