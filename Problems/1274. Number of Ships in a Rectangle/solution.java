@@ -1,10 +1,8 @@
-/**
- * // This is Sea's API interface.
- * // You should not implement it, or speculate about its implementation
- * class Sea {
- *     public boolean hasShips(int[] topRight, int[] bottomLeft);
- * }
- */
+// This is Sea's API interface.
+// You should not implement it, or speculate about its implementation
+interface Sea {
+    public boolean hasShips(int[] topRight, int[] bottomLeft);
+}
 
  // Runtime 1 ms, faster than ?%
  // Memory 30.3 MB, less than ?%
